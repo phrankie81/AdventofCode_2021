@@ -18,7 +18,20 @@ def part2(data):
         the_sums.append(data[i]+data[i+1]+data[i+2])
     result = part1(the_sums)
     return result
-    
 
-print(part1(example1))
-print(part2(example1))
+"""
+Make it work, then make it beautiful, then if you really, really have to, make it fast. 
+90 percent of the time, if you make it beautiful, it will already be fast. So really, 
+just make it beautiful!
+— Joe Armstrong
+
+Above is me making it work. Below is me making it beautiful (maybe)
+"""
+
+
+part1_ans = sum([x < y for x, y in (zip(example1, example1[1:]))])
+print(f"answer to part 1 is {part1_ans}")
+
+sums = [x+y+z for x, y, z in zip(example1, example1[1:], example1[2:])]
+part2_ans = sum([x < y for x, y in (zip(sums, sums[1:]))])
+print(f"answer to part 1 is {part2_ans}")
