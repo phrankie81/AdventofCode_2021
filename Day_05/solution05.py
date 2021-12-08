@@ -4,7 +4,7 @@ from collections import Counter
 import numpy as np
 
 PUZZLE_DIR = pathlib.Path(__file__).parent
-input_file = "input.txt"
+input_file = "example.txt"
 
 lines = (PUZZLE_DIR / input_file).read_text().strip().split("\n")
 # print(lines)
@@ -36,7 +36,7 @@ def part1():
     array = np.zeros((grid_size, grid_size))
     for row in points:
         x1, y1, x2, y2 = int(row[0][0]), int(row[0][1]), int(row[0][2]), int(row[0][3])
-        if x1 == x2 or y1 == y2:
+        if x1 == x2 or y1 == y2: # this if else statement is to remove diagonal lines
             add_to_grid(x1, y1, x2, y2, array)
         else:
             continue

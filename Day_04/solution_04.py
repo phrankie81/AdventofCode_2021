@@ -1,5 +1,4 @@
 import pathlib
-import pprint
 import numpy as np
 
 PUZZLE_DIR = pathlib.Path(__file__).parent

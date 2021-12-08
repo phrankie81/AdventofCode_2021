@@ -1,7 +1,6 @@
 import re
 import pathlib
 from collections import Counter
-import pprint
 
 PUZZLE_DIR = pathlib.Path(__file__).parent
 input_file = "example.txt"
